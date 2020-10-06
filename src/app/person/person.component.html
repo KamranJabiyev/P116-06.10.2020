@@ -1,0 +1,27 @@
+<p *ngIf="name=='Ulvi';else elseblock">{{name}}</p>
+
+<ng-template #elseblock>
+    Ad Ulvi deyil
+</ng-template>
+
+<ul>
+    <li *ngFor="let i of numbers">{{i}}</li>
+</ul>
+
+<div [ngSwitch]="name">
+    <div *ngSwitchCase="'Ulvi'">Ulvi chagirildi</div>
+    <div *ngSwitchCase="'Hesen'">Hesen chagirildi</div>
+    <div *ngSwitchDefault>Hech kim chagirilmadi</div>
+</div>
+
+<h3 [ngClass]="{'backColor':name=='Ulvi'}">Burada nese yazila biler</h3>
+
+<p [ngStyle]="{'color': name=='test' ? 'pink':'gray'}">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae eligendi molestias impedit dignissimos error, tempore ea amet harum accusamus sit et, optio dolore voluptatem suscipit incidunt facilis nam ratione cum!</p>
+
+<ul>
+    <div *ngFor="let person of people;let i=index">
+        <li *ngIf="i!=1">
+        {{i}} {{person.name}} {{person.surname}} {{person.age}}
+        </li>
+    </div>
+</ul>
